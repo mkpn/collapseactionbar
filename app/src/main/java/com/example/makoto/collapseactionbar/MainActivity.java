@@ -95,24 +95,24 @@ public class MainActivity extends Activity implements ObservableScrollViewCallba
 
     @Override
     public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-        Log.d("ƒfƒoƒbƒO", "changed");
-        // ƒhƒ‰ƒbƒO’†‚Ì‚İ”½‰‚³‚¹Aè‚ğ—£‚µ‚½Œã‚ÍƒAƒjƒ[ƒVƒ‡ƒ“‚É”C‚¹‚é
+        Log.d("ãƒ‡ãƒãƒƒã‚°", "changed");
+        // ãƒ‰ãƒ©ãƒƒã‚°ä¸­ã®ã¿åå¿œã•ã›ã€æ‰‹ã‚’é›¢ã—ãŸå¾Œã¯ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã«ä»»ã›ã‚‹
 //        if (dragging) {
-//            Log.d("ƒfƒoƒbƒO", "dragging");
+//            Log.d("ãƒ‡ãƒãƒƒã‚°", "dragging");
 //
 //            int toolbarHeight = mToolbarView.getHeight();
 //            if (firstScroll) {
-//                Log.d("ƒfƒoƒbƒO", "firstScroll");
-//                // ‚ ‚é’ö“xƒXƒNƒ[ƒ‹‚µ‚½ó‘Ô‚©‚ç“®‚©‚·‚Æ‚«‚ÍŒ»İ‚ÌƒXƒNƒ[ƒ‹ˆÊ’u‚ğŠî€‚É‚·‚é
+//                Log.d("ãƒ‡ãƒãƒƒã‚°", "firstScroll");
+//                // ã‚ã‚‹ç¨‹åº¦ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ãŸçŠ¶æ…‹ã‹ã‚‰å‹•ã‹ã™ã¨ãã¯ç¾åœ¨ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®ã‚’åŸºæº–ã«ã™ã‚‹
 //                float currentHeaderTranslationY = ViewHelper.getTranslationY(mHeaderView);
 //                if (-toolbarHeight < currentHeaderTranslationY && toolbarHeight < scrollY) {
 //                    mBaseTranslationY = scrollY;
 //                }
 //            }
-//            // Toolbar‚Ì‰Â“®”ÍˆÍ‚ğ-toolbarHeight‚©‚ç0‚Ü‚Å‚É§ŒÀ‚·‚é
+//            // Toolbarã®å¯å‹•ç¯„å›²ã‚’-toolbarHeightã‹ã‚‰0ã¾ã§ã«åˆ¶é™ã™ã‚‹
 //            int headerTranslationY = Math.min(0, Math.max(-toolbarHeight, -(scrollY - mBaseTranslationY)));
 //
-//            // “®ì’†‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚ğƒLƒƒƒ“ƒZƒ‹‚µ‚ÄˆÚ“®
+//            // å‹•ä½œä¸­ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã—ã¦ç§»å‹•
 //            ViewPropertyAnimator.animate(mHeaderView).cancel();
 //            ViewHelper.setTranslationY(mHeaderView, headerTranslationY);
 //        }
@@ -129,20 +129,20 @@ public class MainActivity extends Activity implements ObservableScrollViewCallba
         float headerTranslationY = ViewHelper.getTranslationY(mHeaderView);
         int toolbarHeight = mToolbar.getHeight();
         if (scrollState == ScrollState.UP) {
-            Log.d("ƒfƒoƒbƒO", "up");
+            Log.d("ãƒ‡ãƒãƒƒã‚°", "up");
 
-            // Toolbar‚ğ‰B‚·
+            // Toolbarã‚’éš ã™
             if (toolbarHeight < mListView.getCurrentScrollY()) {
                 if (headerTranslationY != -toolbarHeight) {
                     ViewPropertyAnimator.animate(mHeaderView).cancel();
-                    // +x ‚Å@x‚Ì•ªc‚µ‚ÄƒAƒjƒ[ƒVƒ‡ƒ“‚·‚é
+                    // +x ã§ã€€xã®åˆ†æ®‹ã—ã¦ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹
                     ViewPropertyAnimator.animate(mHeaderView).translationY(-toolbarHeight + 50).setDuration(200).start();
                 }
             }
         } else if (scrollState == ScrollState.DOWN) {
-            Log.d("ƒfƒoƒbƒO", "down");
+            Log.d("ãƒ‡ãƒãƒƒã‚°", "down");
 
-            // Toolbar‚ğ•\¦‚·‚é
+            // Toolbarã‚’è¡¨ç¤ºã™ã‚‹
             if (toolbarHeight < mListView.getCurrentScrollY()) {
                 if (headerTranslationY != 0) {
                     ViewPropertyAnimator.animate(mHeaderView).cancel();
